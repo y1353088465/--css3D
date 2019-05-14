@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正方体</title>
+	<style type="text/css">
+	html,body{
+		height:100%;
+		background:linear-gradient(to bottom,#ddd 10%,#333 100%) no-repeat;
+	}
+		.box{
+			position: relative;
+			left:50%;
+			top:50%;
+			transform-style: preserve-3d;
+			perspective: 5000px;
+			width:200px;
+			transform-origin: center;
+			animation: yang 5s linear infinite;
+			transition: all 2s;
+		}
+		.box:hover .one{
+			transform: translateZ(-100px);
+			/*transition: all 2s;*/
+		}
+				.box:hover .two{
+			transform: translateX(-100px);
+			/*transition: all 2s;*/
+
+		}
+				.box:hover .three{
+			transform: translateX(100px);
+			/*transition: all 2s;*/
+
+		}
+				.box:hover .four{
+			transform: translateZ(-300px);
+			/*transition: all 2s;*/
+
+		}
+				.box:hover .five{
+			transform: translateY(-100px);
+			/*transition: all 2s;*/
+
+		}
+				.box:hover .six{
+			transform: translateY(100px);
+			/*transition: all 2s;*/
+		2
+		}
+		.demo{
+			width:200px;
+			height:200px;
+			background:yellow;
+			transform: perspective(1500px);
+			position: absolute;
+			left:0;
+			top:0;
+			border:1px solid #666;
+			border-radius:50px;
+			opacity: .4;
+			box-shadow: 2px 2px 2px 2px #000;
+			transition: all 2s;
+		}
+		.one{
+			transform: translateZ(200px);
+		}
+		.two{
+			transform-origin: left;
+			transform: rotateY(-90deg);
+		}
+		.three{
+			transform-origin: right;
+			transform: rotateY(90deg);
+		}
+		.four{
+			
+		}
+		.five{
+			transform-origin: 0 bottom;
+			transform: rotateX(-90deg);
+		}
+		.six{
+			transform-origin: 0 top;
+			transform: rotateX(-270deg);
+			}
+
+			@keyframes yang {
+				1%{
+					transform:rotate3d(1,1,1,0deg);
+				}
+								50%{
+					transform:rotate3d(1,1,1,360deg);
+				}
+								100%{
+					transform:rotate3d(1,1,1,720deg);
+				}
+			}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="demo one"></div>
+		<div class="demo two"></div>
+		<div class="demo three"></div>
+		<div class="demo four"></div>
+		<div class="demo five"></div>
+		<div class="demo six"></div>
+	</div>
+
+
+</body>
+</html>
